@@ -1,4 +1,3 @@
-
 <html style="font-family: -apple-system, BlinkMacSystemFont, sans-serif;">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +18,7 @@
   </div>
   <script type="text/javascript">
     // Query params:
-    // customMessage - string
+    // customMessage - encoded url component string - use encodeURIComponent
     // redirectEncodedUriComponent - encoded url component - use encodeURIComponent
 
     var query = window.location.search;
@@ -31,7 +30,7 @@
 
     if(queryParams['customMessage']){
       var elem = document.getElementById('custom-message');
-      elem.innerText = queryParams['customMessage'];
+      elem.innerText = decodeURIComponent(queryParams['customMessage']);
     }
 
     if(queryParams['redirectEncodedUriComponent']){
