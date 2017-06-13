@@ -35,7 +35,7 @@
 
     if(queryParams['redirectEncodedUriComponent']){
       var elem = document.getElementById('redirect-message');
-      var time = 10;
+      var time = 5;
       elem.innerText = redirectMessage(time);
       window.setInterval(function() {
         time -= 1;
@@ -44,7 +44,7 @@
         if(time <= 0){
         	location.assign(decodeURIComponent(queryParams['redirectEncodedUriComponent']))
         }
-      }, 5000);
+      }, 1000);
     }
     
     function redirectMessage(sec){
