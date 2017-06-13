@@ -37,15 +37,19 @@
     if(queryParams['redirectEncodedUriComponent']){
       var elem = document.getElementById('custom-message');
       var time = 10;
-      elem.innerText = 'You will be redirected in' + time + 'seconds';
+      elem.innerText = redirectMessage(time);
       window.setInterval(function() {
         time -= 1;
-        elem.innerText = 'You will be redirected in' + time + 'seconds';
+        elem.innerText = redirectMessage(time);
 				
         if(time <= 0){
         	location.assign(decodeURIComponent(queryParams['redirectEncodedUriComponent']))
         }
       }, 1000);
+    }
+    
+    function redirectMessage(sec){
+      return 'You will be redirected in ' + time + ' seconds...';
     }
   </script>
 </body>
