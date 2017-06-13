@@ -1,3 +1,4 @@
+
 <html style="font-family: -apple-system, BlinkMacSystemFont, sans-serif;">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,5 +13,38 @@
   <div style="color: #1DAFEC;">
     This is an example redirect page, BOTique.ai bots can redirect users to external resources for means of secure payment, data forms, etc.
   </div>
+  <div id="custom-message">
+  </div>
+  <div id="redirect-message">
+  </div>
+  <script type="text/javascript">
+    // Query params:
+    // customMessage - string
+    // redirectEncodedUriComponent - encoded url component - use encodeURIComponent
+
+    var query = window.location.search;
+    var queryParams = query.substr(1).split('&').reduce(function(acc, v){
+      var params = v.split('=');
+      acc[params[0]] = params[1];
+      return acc;
+    }, {});
+
+    if(queryParams['customMessage']){
+      var elem = document.getElementById('custom-message');
+      elem.innerText = queryParams['customMessage'];
+    }
+
+    if(queryParams['redirectEncodedUriComponent']){
+      var elem = document.getElementById('custom-message');
+      var time = 10;
+      elem.innerText = 'You will be redirected in' + time;
+      window.setInterval(function() {
+        time -= 1;
+        elem.innerText = 'You will be redirected in' + time;
+
+        location.assign(decodeURIComponent(queryParams['redirectEncodedUriComponent']))
+      }, 1000);
+    }
+  </script>
 </body>
 </html>
