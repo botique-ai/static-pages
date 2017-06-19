@@ -42,13 +42,16 @@
         elem.innerText = redirectMessage(time);
 				
         if(time <= 0){
-        	location.assign(decodeURIComponent(queryParams['redirectEncodedUriComponent']))
+          location.assign(decodeURIComponent(queryParams['redirectEncodedUriComponent']))
         }
       }, 1000);
     }
     
     function redirectMessage(sec){
-      return 'You will be redirected in ' + time + ' seconds...';
+	    if(sec > -1){
+		    return 'You will be redirected in ' + sec + ' seconds...';
+	    } else {
+		    return 'You are being redirected'
     }
   </script>
 </body>
