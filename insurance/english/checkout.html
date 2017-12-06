@@ -6,13 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body style="direction: ltr">
   <div class="aig-abroad">
     <header>
       <div class="container">
-        <a href="#/" title="חברת AIG ישראל">
-                  <img src="https://www.aig.co.il/travel/images/logo_aig_r.png" alt="חברת AIG ישראל">
-              </a>
       </div>
     </header>
     <div>
@@ -21,18 +18,18 @@
         <div class="container ng-scope">
           <div class="row">
             <div class="col-sm-12" style="color: red; font-size: 250%;">
-              טופס להדגמה בלבד, אין צורך למלא
+              Example form only, no need to feel
             </div>
           </div>
           <div class="row">
-            <nav class="col-xs-12" role="dialog" aria-label="מיקומך בתהליך ההרשמה שלב 3 מתוך 3">
+            <nav class="col-xs-12" role="dialog">
               <ul role="presentation">
                 <li ng-click="fromVM.goStep('form.step1')" aria-hidden="false" ng-class="{'active': fromVM.isPassStep1,'current':fromVM.currentStep == 1}"
-                  tabindex="0" class="ng-binding active" role="button" style="">פרטי הנסיעה</li>
+                  tabindex="0" class="ng-binding active" role="button" style="">Trip details</li>
                 <li ng-click="fromVM.goStep('form.step2')" aria-hidden="false" ng-class="{'active': fromVM.isPassStep2,'current':fromVM.currentStep == 2}"
-                  tabindex="0" class="ng-binding active" role="button" style="">בחירת חבילה</li>
+                  tabindex="0" class="ng-binding active" role="button" style="">Choose Package</li>
                 <li ng-click="fromVM.goStep('form.step3')" aria-hidden="false" ng-class="{'active': fromVM.isPassStep3,'current':fromVM.currentStep == 3}"
-                  tabindex="0" class="ng-binding active current" role="button" style="">פרטי הנוסעים ותשלום</li>
+                  tabindex="0" class="ng-binding active current" role="button" style="">insured details and payment</li>
               </ul>
             </nav>
           </div>
@@ -41,12 +38,12 @@
         <div ui-view="" class="container ng-scope" style="">
           <div class="step3 ng-scope">
             <div>
-              <div class="col-md-8">
-                <section-header header-title="1. הנוסעים" ng-class="{ 'disabled': !step3VM.showSubStep1 }" title-accessibility="בחרו הרחבות והכניסו פרטים"
+              <div class="col-md-8" style="float: left">
+                <section-header header-title="1. Travelers" ng-class="{ 'disabled': !step3VM.showSubStep1 }" title-accessibility="בחרו הרחבות והכניסו פרטים"
                   common-id="subStep1TitleBox" print-enabled="false" is-opened="false" is-focus="true" is-hidden="!step3VM.showSubStep1"
                   update-enabled="true" header-title-id="subStep1Title" class="ng-isolate-scope">
                   <div class="selection-title title-box">
-                    <h1 class="col-xs-7 col-md-8 ng-binding" id="subStep1Title" is-opened="isOpened" aria-hidden="false">1. הנוסעים <span class="sr-only ng-binding">בחרו הרחבות והכניסו פרטים</span></h1>
+                    <h1 class="col-xs-7 col-md-8 ng-binding" id="subStep1Title" is-opened="isOpened" aria-hidden="false">1. Travelers </h1>
                     <div class="sub-text col-xs-5 col-md-4 clearfix"><a href="#" onclick="window.print();return false" ng-show="printEnabled" class="hidden-sm hidden-xs ng-hide"
                         aria-hidden="true"><i class="fa fa-print pull-left"></i> </a><span ng-show="updateEnabled" aria-hidden="false"
                         class=""><a slide-toggle="#subStep1TitleBox" is-opened="isEditableTravelDetailsOpen" aria-expanded="isOpened" ng-show="updateEnabled" class="pull-left updateTripDetailsToggle ng-binding ng-isolate-scope" href="" aria-hidden="false">לעדכון פרטי נסיעה </a><span ng-show="updateEnabled" class="hidden-sm hidden-xs" aria-hidden="false"><i class="fa fa-pencil pull-left"></i></span></span>
